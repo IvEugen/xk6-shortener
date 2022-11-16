@@ -6,21 +6,15 @@ import (
 	"go.k6.io/k6/js/modules"
 )
 
-const version = "v0.0.1"
-
 func init() {
-	modules.Register("k6/x/shortener", &Short{
-		Version: version,
-	})
+	modules.Register("k6/x/shortener", new(Shortener))
 }
 
 var letterRunes = []rune("abcdefghijklmnopqrstuvwxyz")
 
-type Short struct {
-	Version string
-}
+type Shortener struct{}
 
-func (*Short) GeneratorURL(n int) string {
+func (*Shortener) GeneratorURL(n int) string {
 	b := make([]rune, n)
 	for i := range b {
 		b[i] = letterRunes[rand.Intn(len(letterRunes))]
