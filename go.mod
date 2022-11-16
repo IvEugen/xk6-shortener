@@ -1,6 +1,6 @@
 module github.com/IvEugen/xk6-shortener
 
-go 1.18
+go 1.19
 
 require go.k6.io/k6 v0.41.0
 
