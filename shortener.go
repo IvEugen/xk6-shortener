@@ -9,7 +9,7 @@ import (
 const version = "v0.0.1"
 
 func init() {
-	modules.Register("shortener", &Short{
+	modules.Register("k6/x/shortener", &Short{
 		Version: version,
 	})
 }
